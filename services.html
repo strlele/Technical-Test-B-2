@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BankDash</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Sidebar -->
+  <aside id="sidebar"
+    class="bg-white w-64 min-h-screen fixed top-0 left-0 transform transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0 border-gray-200 flex flex-col z-40">
+    <div class="flex items-center justify-center p-4 border-b border-gray-200">
+      <img src="img/logo.png" alt="BankDash Logo" class="w-9 h-9 mr-2">
+      <h1 class="text-2xl font-bold text-gray-800">BankDash.</h1>
+    </div>
+    <nav class="flex flex-col p-2 space-y-2">
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/dasboard.svg" alt="Dashboard Icon" class="w-5 h-5 mr-3">Dashboard
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/transactions.svg" alt="Transactions Icon" class="w-5 h-5 mr-3">Transactions
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/accounts.svg" alt="Accounts Icon" class="w-5 h-5 mr-3">Accounts
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/investments.svg" alt="Investments Icon" class="w-5 h-5 mr-3">Investments
+      </a>
+      <a href="Credit-Cards.html"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/credit-card.svg" alt="Credit Cards Icon" class="w-5 h-5 mr-3">Credit Cards
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/loans.svg" alt="Loans Icon" class="w-5 h-5 mr-3">Loans
+      </a>
+      <a href="services.html"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/service 1.svg" alt="Services Icon" class="w-5 h-5 mr-3">Services
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/privileges.svg" alt="My Privileges Icon" class="w-5 h-5 mr-3">My Privileges
+      </a>
+      <a href="settings.html"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/settings 1.svg" alt="Settings Icon" class="w-5 h-5 mr-3">Settings
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Layout -->
+  <div class="flex flex-col md:flex-row min-h-screen overflow-hidden pt-6">
+
+    <main class="flex-1 md:ml-64 pt-16 md:mt-0">
+      <!-- Mobile Menu Button -->
+      <button id="menu-button" class="fixed top-4 left-4 z-50 md:hidden bg-white p-2 ">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <!-- Header -->
+      <header
+        class="fixed top-0 left-0 right-0 bg-white shadow p-4 z-30 md:ml-64 flex flex-col item-center justify-between px-10">
+        <!-- title, profile -->
+        <div class="flex items-center justify-between md:justify-between w-full">
+          <!-- <button id="menu-button" class="absolute top-4 left-4 md:hidden z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button> -->
+          <div class="text-center flex-1 md:flex-none md:text-left">
+            <a href="#" class="text-[#343C6A] font-semibold text-[25px] block">Services</a>
+          </div>
+
+          <div class="md:hidden">
+            <img src="img/profile.png" alt="Profile" class="w-8 h-8 rounded-full">
+          </div>
+
+          <!-- Desktop right icons -->
+          <nav class="hidden md:flex items-center gap-6">
+            <div class="relative">
+              <input type="text" placeholder="Search for something"
+                class="pl-10 pr-4 py-2 rounded-full focus:outline-none focus:ring focus:border-blue-300"
+                style="background-color: #F5F7FA;">
+              <img src="img/icon/search.svg" alt="Search Icon"
+                class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+            </div>
+            <div class="p-2 rounded-full cursor-pointer" style="background-color: #F5F7FA;">
+              <img src="img/icon/settings.svg" alt="Settings" class="w-6 h-6">
+            </div>
+            <div class="p-2 rounded-full cursor-pointer" style="background-color:#F5F7FA;">
+              <img src="img/icon/002-notification-1.svg" alt="Notifications" class="w-6 h-6">
+            </div>
+            <img src="img/profile.png" alt="Profile" class="w-8 h-8 rounded-full">
+          </nav>
+        </div>
+
+        <!-- Search bar for mobile -->
+        <div class="mt-2 md:hidden">
+          <div class="relative">
+            <input type="text" placeholder="Search for something"
+              class="pl-10 pr-4 py-2 rounded-full focus:outline-none focus:ring focus:border-blue-300 w-full"
+              style="background-color: #F5F7FA;">
+            <img src="img/icon/search.svg" alt="Search Icon"
+              class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+          </div>
+        </div>
+      </header>
+
+      <!-- content 1: Services -->
+      <div class="flex-1 p-4 overflow-auto px-10">
+        <div class="mb-4">
+          <div class="flex space-x-4 overflow-x-auto space-x-3 items-start w-full">
+
+            <!-- Life insurance -->
+            <div
+              class="flex items-center gap-3 bg-white p-5 rounded-2xl shadow-sm min-w-[250px] w-full sm:w-[250px] md:w-[300px] lg:w-[350px]">
+              <div class="flex items-center justify-center text-primary rounded-full w-12 h-12 text-2xl"
+                style="background-color: #E7EDFF;">
+                <img src="img/icon/life-insurance filled 1.svg" alt="">
+              </div>
+              <div>
+                <h3 class="text-[#232323] text-xl font-semibold">Life Insurance</h3>
+                <p class="text-[#718EBF] text-base m-0">Unlimited protection</p>
+              </div>
+            </div>
+            <!-- Shopping -->
+            <div
+              class="flex items-center gap-3 bg-white p-5 rounded-2xl shadow-sm min-w-[250px] w-full sm:w-[250px] md:w-[300px] lg:w-[350px]">
+              <div class="flex items-center justify-center text-primary rounded-full w-12 h-12 text-2xl"
+                style="background-color: #FFF5D9;">
+                <img src="img/icon/bag 1.svg" alt="">
+              </div>
+              <div>
+                <h3 class="text-[#232323] text-xl font-semibold">Shopping</h3>
+                <p class="text-[#718EBF] text-base m-0">Buy. Think. Grow.</p>
+              </div>
+            </div>
+            <!-- Safety -->
+            <div
+              class="flex items-center gap-3 bg-white p-5 rounded-2xl shadow-sm min-w-[250px] w-full sm:w-[250px] md:w-[300px] lg:w-[350px]">
+              <div class="flex items-center justify-center text-primary rounded-full w-12 h-12 text-2xl"
+                style="background-color: #DCFAF8;">
+                <img src="img/icon/shield 1.svg" alt="">
+              </div>
+              <div>
+                <h3 class="text-[#232323] text-xl font-semibold">Safety</h3>
+                <p class="text-[#718EBF] text-base m-0">We are your allies</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- content 2: mY Cards -->
+
+      <div class="flex-1 p-4 overflow-auto px-10">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">My Cards</h2>
+        <div class="sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Businerss Loans-->
+          <div class="bg-white p-4 shadow-md flex items-center rounded-2xl mb-2">
+            <div class="p-3 mr-6 flex items-center justify-center bg-red-100 rounded-xl">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2001_1117)">
+                  <path
+                    d="M11.5938 12.2698C14.9498 12.2698 17.6801 9.51765 17.6801 6.1349C17.6801 2.75215 14.9498 0 11.5938 0C8.23786 0 5.50757 2.75211 5.50757 6.13486C5.50757 9.51761 8.23786 12.2698 11.5938 12.2698ZM9.63812 8.04927C9.81516 7.77865 10.1781 7.70268 10.4487 7.8798C10.8431 8.13773 10.9918 8.16151 11.5122 8.15788C12.0201 8.15452 12.3148 7.77595 12.3737 7.42562C12.4023 7.25521 12.4133 6.83909 11.8976 6.65678C11.2927 6.44292 10.6736 6.1985 10.2429 5.86069C9.81223 5.52288 9.61501 4.93971 9.72826 4.33886C9.85104 3.68749 10.3054 3.16897 10.9141 2.98564C10.9196 2.984 10.925 2.98268 10.9305 2.98104V2.75906C10.9305 2.43566 11.1927 2.17347 11.5161 2.17347C11.8395 2.17347 12.1017 2.43566 12.1017 2.75906V2.94414C12.4994 3.03909 12.7772 3.22105 12.89 3.30534C13.149 3.49901 13.202 3.86594 13.0084 4.125C12.8147 4.38407 12.4478 4.43708 12.1887 4.24337C12.0687 4.15366 11.7371 3.9608 11.2519 4.10701C10.9684 4.19242 10.8949 4.4721 10.8791 4.55576C10.8482 4.72016 10.8829 4.87425 10.9657 4.93913C11.2642 5.17329 11.8016 5.38062 12.2879 5.55251C13.1846 5.86947 13.6832 6.70023 13.5287 7.61976C13.4528 8.07094 13.2258 8.48951 12.8895 8.79851C12.6604 9.00901 12.3938 9.15908 12.1017 9.24477V9.51066C12.1017 9.83406 11.8395 10.0963 11.5161 10.0963C11.1927 10.0963 10.9305 9.83406 10.9305 9.51066V9.30317C10.5519 9.25726 10.234 9.13885 9.80755 8.85988C9.53697 8.68284 9.46107 8.31989 9.63812 8.04927Z"
+                    fill="#FF82AC" />
+                  <path
+                    d="M2.21952 14.2373H0.884295C0.560894 14.2373 0.298706 14.4995 0.298706 14.8229V19.4135C0.298706 19.7369 0.560894 19.9991 0.884295 19.9991H2.21955V14.2373H2.21952Z"
+                    fill="#FF82AC" />
+                  <path
+                    d="M19.5295 14.1965C18.4319 13.0989 16.646 13.0989 15.5485 14.1965L13.7943 15.9507L13.0753 16.6697C12.7847 16.9602 12.3906 17.1235 11.9797 17.1235H8.48353C8.16778 17.1235 7.89607 16.8808 7.8812 16.5654C7.86535 16.2287 8.13366 15.9507 8.46694 15.9507H12.0205C12.735 15.9507 13.3547 15.442 13.4776 14.7382C13.5058 14.5765 13.5205 14.4104 13.5205 14.2408C13.5205 13.9168 13.258 13.6539 12.9341 13.6539H10.9869C10.3506 13.6539 9.7395 13.3652 9.0925 13.0596C8.41389 12.739 7.71219 12.4075 6.89171 12.3529C6.17409 12.3051 5.45483 12.3837 4.7538 12.5861C4.00319 12.8029 3.46363 13.4697 3.3982 14.2397C3.3957 14.2395 3.39316 14.2394 3.39062 14.2393V19.9972L13.4794 20C14.1731 20 14.8253 19.7298 15.3158 19.2393L19.5293 15.0258C19.7585 14.7969 19.7585 14.4255 19.5295 14.1965Z"
+                    fill="#FF82AC" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2001_1117">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="flex items-center justify-between w-full pr-10">
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Business loans</div>
+                <div class="text-xs">It is a long established</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex items-center">
+                <a href="#"
+                  class="text-sm p-2 rounded-full font-semibold text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:no-underline"
+                  style="border: 1px solid;">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checking accounts -->
+          <div class="bg-white p-4 shadow-md flex items-center rounded-2xl mb-2">
+            <div class="p-3 mr-6 flex items-center justify-center bg-yellow-100 rounded-xl">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2001_1238)">
+                  <path
+                    d="M18.3333 4.16679H14.1667V3.33343C14.1667 2.41425 13.4192 1.66675 12.5 1.66675H7.5C6.58082 1.66675 5.83332 2.41421 5.83332 3.33343V4.16675H1.66668C0.747461 4.16679 0 4.91425 0 5.83343V8.33344C0 9.25266 0.747461 10.0001 1.66668 10.0001H8.33336V9.58344C8.33336 9.35313 8.51973 9.16676 8.75004 9.16676H11.25C11.4804 9.16676 11.6667 9.35313 11.6667 9.58344V10.0001H18.3334C19.2525 10.0001 20 9.25266 20 8.33344V5.83343C20 4.91425 19.2525 4.16679 18.3333 4.16679ZM12.5 4.16679H7.5V3.33343H12.5V4.16679Z"
+                    fill="#FFBB38" />
+                  <path
+                    d="M19.7689 10.4498C19.6269 10.3794 19.4572 10.3957 19.3318 10.4909C19.0356 10.7151 18.6905 10.8335 18.3333 10.8335H11.6667V12.0835C11.6667 12.3138 11.4803 12.5002 11.25 12.5002H8.75C8.51969 12.5002 8.33332 12.3138 8.33332 12.0835V10.8335H1.66668C1.30941 10.8335 0.964375 10.7151 0.668125 10.4909C0.542383 10.3948 0.373125 10.3786 0.231094 10.4498C0.0895312 10.5202 0 10.6646 0 10.8229V16.6668C0 17.586 0.747461 18.3335 1.66668 18.3335H18.3334C19.2525 18.3335 20 17.5861 20 16.6668V10.8229C20 10.6646 19.9105 10.5202 19.7689 10.4498Z"
+                    fill="#FFBB38" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2001_1238">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="flex items-center justify-between w-full pr-10">
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Checking accounts</div>
+                <div class="text-xs">It is a long established</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex items-center">
+                <a href="#"
+                  class="text-sm p-2 rounded-full font-semibold text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:no-underline"
+                  style="border: 1px solid;">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Savings accounts -->
+          <div class="bg-white p-4 shadow-md flex items-center rounded-2xl mb-2">
+            <div class="p-3 mr-6 flex items-center justify-center bg-red-100 rounded-xl">
+              <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.90625 20H7.34375C6.56832 20 5.9375 19.3692 5.9375 18.5938V8.90625C5.9375 8.13082 6.56832 7.5 7.34375 7.5H8.90625C9.68168 7.5 10.3125 8.13082 10.3125 8.90625V18.5938C10.3125 19.3692 9.68164 20 8.90625 20Z"
+                  fill="#FF82AC" />
+                <path
+                  d="M2.96875 20H1.40625C0.630821 20 0 19.3692 0 18.5938V12.0312C0 11.2558 0.630821 10.625 1.40625 10.625H2.96875C3.74418 10.625 4.37501 11.2558 4.37501 12.0312V18.5938C4.37501 19.3692 3.74415 20 2.96875 20Z"
+                  fill="#FF82AC" />
+                <path
+                  d="M14.844 20H13.2815C12.5061 20 11.8752 19.3692 11.8752 18.5938V5.625H11.0166C10.6152 5.625 10.2616 5.39844 10.0939 5.03375C9.92617 4.66906 9.98426 4.2532 10.2455 3.9484C10.2485 3.94492 10.2515 3.94145 10.2546 3.93805L13.5973 0.207891C13.7158 0.0755859 13.8851 0 14.0627 0C14.2404 0 14.4096 0.0755859 14.5282 0.207891L17.8709 3.93805C17.874 3.94145 17.877 3.94492 17.88 3.9484C18.1412 4.25316 18.1993 4.66906 18.0316 5.03375C17.8638 5.39844 17.5102 5.625 17.1088 5.625H16.2502V18.5938C16.2502 19.3692 15.6194 20 14.844 20Z"
+                  fill="#FF82AC" />
+              </svg>
+            </div>
+            <div class="flex items-center justify-between w-full pr-10">
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Savings accounts</div>
+                <div class="text-xs">It is a long established</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs ">Many Publishing</div>
+              </div>
+              <div class="flex items-center">
+                <a href="#"
+                  class="text-sm p-2 rounded-full font-semibold text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:no-underline"
+                  style="border: 1px solid;">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Debit and credit cards -->
+          <div class="bg-white p-4 shadow-md flex items-center rounded-2xl mb-2">
+            <div class="p-3 mr-6 flex items-center justify-center bg-blue-100 rounded-xl">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2001_1164)">
+                  <path
+                    d="M9.85746 9.63406C11.181 9.63406 12.3271 9.15936 13.2635 8.22278C14.1999 7.28635 14.6746 6.14057 14.6746 4.81688C14.6746 3.49364 14.1999 2.34771 13.2634 1.41097C12.3268 0.474699 11.1809 0 9.85746 0C8.53377 0 7.38799 0.474699 6.45156 1.41113C5.51513 2.34756 5.04028 3.49349 5.04028 4.81688C5.04028 6.14057 5.51513 7.2865 6.45172 8.22293C7.3883 9.1592 8.53423 9.63406 9.85746 9.63406Z"
+                    fill="#396AFF" />
+                  <path
+                    d="M18.2862 15.3789C18.2592 14.9891 18.2046 14.564 18.1242 14.1151C18.043 13.6629 17.9385 13.2353 17.8134 12.8445C17.6841 12.4406 17.5083 12.0418 17.291 11.6595C17.0655 11.2628 16.8006 10.9174 16.5034 10.6331C16.1926 10.3357 15.812 10.0966 15.372 9.92218C14.9334 9.74869 14.4474 9.6608 13.9276 9.6608C13.7234 9.6608 13.526 9.74457 13.1446 9.99283C12.91 10.1459 12.6355 10.3229 12.3291 10.5186C12.0671 10.6856 11.7121 10.842 11.2738 10.9836C10.8461 11.122 10.4118 11.1922 9.98318 11.1922C9.55456 11.1922 9.12045 11.122 8.69229 10.9836C8.25437 10.8421 7.89945 10.6857 7.63776 10.5188C7.33427 10.3249 7.05961 10.1479 6.82142 9.99267C6.44056 9.74441 6.24296 9.66064 6.0388 9.66064C5.51878 9.66064 5.03295 9.74869 4.59456 9.92233C4.15481 10.0964 3.7741 10.3355 3.46297 10.6332C3.16589 10.9177 2.90084 11.263 2.67562 11.6595C2.45849 12.0418 2.28271 12.4405 2.15332 12.8447C2.02835 13.2355 1.92383 13.6629 1.84265 14.1151C1.76224 14.5634 1.70761 14.9887 1.6806 15.3793C1.65405 15.762 1.64062 16.1592 1.64062 16.5603C1.64062 17.6043 1.9725 18.4495 2.62695 19.0728C3.27331 19.6879 4.12856 20 5.1686 20H14.7987C15.8387 20 16.6937 19.6881 17.3402 19.0728C17.9948 18.45 18.3267 17.6046 18.3267 16.5602C18.3265 16.1572 18.3129 15.7597 18.2862 15.3789Z"
+                    fill="#396AFF" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2001_1164">
+                    <rect width="19.9999" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="flex items-center justify-between w-full pr-10">
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700 ">Debit and credit cards</div>
+                <div class="text-xs">It is a long established</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs ">Many Publishing</div>
+              </div>
+              <div class="flex items-center">
+                <a href="#"
+                  class="text-sm p-2 rounded-full font-semibold text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:no-underline"
+                  style="border: 1px solid;">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Life Insurance -->
+          <div class="bg-white p-4 shadow-md flex items-center rounded-2xl mb-2">
+            <div class="p-3 mr-6 flex items-center justify-center bg-[#E7EDFF] rounded-xl">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2001_1186)">
+                  <path
+                    d="M17.6553 13.3559C17.1178 14.8128 16.3048 16.0796 15.2387 17.1207C14.0251 18.3057 12.4361 19.2473 10.5156 19.919C10.4526 19.941 10.3868 19.959 10.3207 19.9722C10.2335 19.9895 10.1447 19.9988 10.0566 20H10.0394C9.94553 20 9.85123 19.9905 9.75769 19.9722C9.69162 19.959 9.62677 19.941 9.56406 19.9194C7.6413 19.2488 6.05026 18.3077 4.83551 17.1227C3.76892 16.0815 2.95608 14.8155 2.41928 13.3586C1.44317 10.7097 1.49871 7.79159 1.54342 5.44662L1.54418 5.41061C1.55319 5.21697 1.55898 5.01357 1.56219 4.78896C1.57852 3.68621 2.45529 2.77389 3.55819 2.71239C5.85769 2.58407 7.63657 1.8341 9.1565 0.35262L9.16977 0.340413C9.42215 0.108937 9.74014 -0.00458834 10.0566 0.00014191C10.3618 0.00410921 10.6657 0.117482 10.9091 0.340413L10.9221 0.35262C12.4423 1.8341 14.2212 2.58407 16.5207 2.71239C17.6236 2.77389 18.5004 3.68621 18.5167 4.78896C18.5199 5.0151 18.5257 5.21819 18.5347 5.41061L18.5352 5.42587C18.5797 7.77526 18.635 10.6992 17.6553 13.3559Z"
+                    fill="#16DBCC" />
+                  <path
+                    d="M17.6554 13.356C17.1178 14.8129 16.3048 16.0797 15.2387 17.1208C14.0251 18.3058 12.4361 19.2474 10.5156 19.9191C10.4526 19.9411 10.3868 19.9591 10.3208 19.9723C10.2335 19.9896 10.1447 19.9989 10.0566 20.0001V0.000244141C10.3618 0.00421144 10.6658 0.117584 10.9091 0.340515L10.9221 0.352722C12.4424 1.8342 14.2212 2.58417 16.5207 2.7125C17.6236 2.77399 18.5004 3.68631 18.5167 4.78907C18.5199 5.0152 18.5257 5.2183 18.5347 5.41071L18.5352 5.42597C18.5797 7.77537 18.635 10.6993 17.6554 13.356Z"
+                    fill="#16DBCC" />
+                  <path
+                    d="M15.0236 10.0001C15.0236 12.7425 12.7969 14.9749 10.0567 14.9847H10.0392C7.29089 14.9847 5.05457 12.7485 5.05457 10.0001C5.05457 7.2518 7.29089 5.01562 10.0392 5.01562H10.0567C12.7969 5.02539 15.0236 7.25775 15.0236 10.0001Z"
+                    fill="white" />
+                  <path
+                    d="M13.1016 9.19753L10.0764 11.8814L9.42264 12.4613C9.26821 12.5983 9.06566 12.6667 8.86332 12.6667C8.66077 12.6667 8.45842 12.5983 8.30378 12.4613L6.89827 11.214C6.58941 10.94 6.58941 10.4962 6.89827 10.2221C7.20672 9.94812 7.70765 9.94812 8.01651 10.2221L8.86332 10.9732L11.9834 8.20561C12.2923 7.93146 12.7932 7.93146 13.1016 8.20561C13.4105 8.47959 13.4105 8.92392 13.1016 9.19753Z"
+                    fill="#16DBCC" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2001_1186">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="flex items-center justify-between w-full pr-10">
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Life Insurance</div>
+                <div class="text-xs">It is a long established</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs ">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs ">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs ">Many Publishing</div>
+              </div>
+              <div class="flex items-center">
+                <a href="#"
+                  class="text-sm p-2 rounded-full font-semibold text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:no-underline"
+                  style="border: 1px solid;">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Businerss Loans-->
+          <div class="bg-white p-4 shadow-md flex items-center rounded-2xl mb-2">
+            <div class="p-3 mr-6 flex items-center justify-center bg-red-100 rounded-xl">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2001_1117)">
+                  <path
+                    d="M11.5938 12.2698C14.9498 12.2698 17.6801 9.51765 17.6801 6.1349C17.6801 2.75215 14.9498 0 11.5938 0C8.23786 0 5.50757 2.75211 5.50757 6.13486C5.50757 9.51761 8.23786 12.2698 11.5938 12.2698ZM9.63812 8.04927C9.81516 7.77865 10.1781 7.70268 10.4487 7.8798C10.8431 8.13773 10.9918 8.16151 11.5122 8.15788C12.0201 8.15452 12.3148 7.77595 12.3737 7.42562C12.4023 7.25521 12.4133 6.83909 11.8976 6.65678C11.2927 6.44292 10.6736 6.1985 10.2429 5.86069C9.81223 5.52288 9.61501 4.93971 9.72826 4.33886C9.85104 3.68749 10.3054 3.16897 10.9141 2.98564C10.9196 2.984 10.925 2.98268 10.9305 2.98104V2.75906C10.9305 2.43566 11.1927 2.17347 11.5161 2.17347C11.8395 2.17347 12.1017 2.43566 12.1017 2.75906V2.94414C12.4994 3.03909 12.7772 3.22105 12.89 3.30534C13.149 3.49901 13.202 3.86594 13.0084 4.125C12.8147 4.38407 12.4478 4.43708 12.1887 4.24337C12.0687 4.15366 11.7371 3.9608 11.2519 4.10701C10.9684 4.19242 10.8949 4.4721 10.8791 4.55576C10.8482 4.72016 10.8829 4.87425 10.9657 4.93913C11.2642 5.17329 11.8016 5.38062 12.2879 5.55251C13.1846 5.86947 13.6832 6.70023 13.5287 7.61976C13.4528 8.07094 13.2258 8.48951 12.8895 8.79851C12.6604 9.00901 12.3938 9.15908 12.1017 9.24477V9.51066C12.1017 9.83406 11.8395 10.0963 11.5161 10.0963C11.1927 10.0963 10.9305 9.83406 10.9305 9.51066V9.30317C10.5519 9.25726 10.234 9.13885 9.80755 8.85988C9.53697 8.68284 9.46107 8.31989 9.63812 8.04927Z"
+                    fill="#FF82AC" />
+                  <path
+                    d="M2.21952 14.2373H0.884295C0.560894 14.2373 0.298706 14.4995 0.298706 14.8229V19.4135C0.298706 19.7369 0.560894 19.9991 0.884295 19.9991H2.21955V14.2373H2.21952Z"
+                    fill="#FF82AC" />
+                  <path
+                    d="M19.5295 14.1965C18.4319 13.0989 16.646 13.0989 15.5485 14.1965L13.7943 15.9507L13.0753 16.6697C12.7847 16.9602 12.3906 17.1235 11.9797 17.1235H8.48353C8.16778 17.1235 7.89607 16.8808 7.8812 16.5654C7.86535 16.2287 8.13366 15.9507 8.46694 15.9507H12.0205C12.735 15.9507 13.3547 15.442 13.4776 14.7382C13.5058 14.5765 13.5205 14.4104 13.5205 14.2408C13.5205 13.9168 13.258 13.6539 12.9341 13.6539H10.9869C10.3506 13.6539 9.7395 13.3652 9.0925 13.0596C8.41389 12.739 7.71219 12.4075 6.89171 12.3529C6.17409 12.3051 5.45483 12.3837 4.7538 12.5861C4.00319 12.8029 3.46363 13.4697 3.3982 14.2397C3.3957 14.2395 3.39316 14.2394 3.39062 14.2393V19.9972L13.4794 20C14.1731 20 14.8253 19.7298 15.3158 19.2393L19.5293 15.0258C19.7585 14.7969 19.7585 14.4255 19.5295 14.1965Z"
+                    fill="#FF82AC" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2001_1117">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="flex items-center justify-between w-full pr-10">
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Business loans</div>
+                <div class="text-xs ">It is a long established</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs ">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs ">Many Publishing</div>
+              </div>
+              <div class="flex flex-col mr-10">
+                <div class="text-sm font-semibold text-gray-700">Lorem ipsum</div>
+                <div class="text-xs ">Many Publishing</div>
+              </div>
+              <div class="flex items-center">
+                <a href="#"
+                  class="text-sm p-2 rounded-full font-semibold text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:no-underline"
+                  style="border: 1px solid;">View Details</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const button = document.getElementById('menu-button');
+    const sidebar = document.getElementById('sidebar');
+
+    button.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+  </script>
+
+</body>
+
+</html>

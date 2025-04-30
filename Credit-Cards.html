@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BankDash</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Sidebar -->
+  <aside id="sidebar"
+    class="bg-white w-64 min-h-screen fixed top-0 left-0 transform transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0 border-gray-200 flex flex-col z-40">
+    <div class="flex items-center justify-center p-4 border-b border-gray-200">
+      <img src="img/logo.png" alt="BankDash Logo" class="w-9 h-9 mr-2">
+      <h1 class="text-2xl font-bold text-gray-800">BankDash.</h1>
+    </div>
+    <nav class="flex flex-col p-2 space-y-2">
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/dasboard.svg" alt="Dashboard Icon" class="w-5 h-5 mr-3">Dashboard
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/transactions.svg" alt="Transactions Icon" class="w-5 h-5 mr-3">Transactions
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/accounts.svg" alt="Accounts Icon" class="w-5 h-5 mr-3">Accounts
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/investments.svg" alt="Investments Icon" class="w-5 h-5 mr-3">Investments
+      </a>
+      <a href="Credit-Cards.html"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/credit-card.svg" alt="Credit Cards Icon" class="w-5 h-5 mr-3">Credit Cards
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/loans.svg" alt="Loans Icon" class="w-5 h-5 mr-3">Loans
+      </a>
+      <a href="services.html"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/service 1.svg" alt="Services Icon" class="w-5 h-5 mr-3">Services
+      </a>
+      <a href="#"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/privileges.svg" alt="My Privileges Icon" class="w-5 h-5 mr-3">My Privileges
+      </a>
+      <a href="settings.html"
+        class="flex items-center text-gray-700 hover:text-blue-600 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200 hover:shadow-md hover:translate-x-1 transition-all duration-200 p-3 rounded-lg">
+        <img src="img/icon/settings 1.svg" alt="Settings Icon" class="w-5 h-5 mr-3">Settings
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Layout -->
+  <div class="flex flex-col md:flex-row min-h-screen overflow-hidden pt-6">
+    <main class="flex-1 md:ml-64 pt-16 md:mt-0">
+      <!-- Mobile Menu Button -->
+      <button id="menu-button" class="fixed top-4 left-4 z-50 md:hidden bg-white p-2 ">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <!-- Header -->
+      <header
+        class="fixed top-0 left-0 right-0 bg-white shadow p-4 z-30 md:ml-64 flex flex-col item-center justify-between px-10">
+        <!-- title, profile -->
+        <div class="flex items-center justify-between md:justify-between w-full">
+          <!-- <button id="menu-button" class="absolute top-4 left-4 md:hidden z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button> -->
+          <div class="text-center flex-1 md:flex-none md:text-left">
+            <a href="#" class="text-[#343C6A] font-semibold text-[25px] block">Credit Cards</a>
+          </div>
+
+          <div class="md:hidden">
+            <img src="img/profile.png" alt="Profile" class="w-8 h-8 rounded-full">
+          </div>
+
+          <!-- Desktop right icons -->
+          <nav class="hidden md:flex items-center gap-6">
+            <div class="relative">
+              <input type="text" placeholder="Search for something"
+                class="pl-10 pr-4 py-2 rounded-full focus:outline-none focus:ring focus:border-blue-300"
+                style="background-color: #F5F7FA;">
+              <img src="img/icon/search.svg" alt="Search Icon"
+                class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+            </div>
+            <div class="p-2 rounded-full cursor-pointer" style="background-color: #F5F7FA;">
+              <img src="img/icon/settings.svg" alt="Settings" class="w-6 h-6">
+            </div>
+            <div class="p-2 rounded-full cursor-pointer" style="background-color:#F5F7FA;">
+              <img src="img/icon/002-notification-1.svg" alt="Notifications" class="w-6 h-6">
+            </div>
+            <img src="img/profile.png" alt="Profile" class="w-8 h-8 rounded-full">
+          </nav>
+        </div>
+
+        <!-- Search bar for mobile -->
+        <div class="mt-2 md:hidden">
+          <div class="relative">
+            <input type="text" placeholder="Search for something"
+              class="pl-10 pr-4 py-2 rounded-full focus:outline-none focus:ring focus:border-blue-300 w-full"
+              style="background-color: #F5F7FA;">
+            <img src="img/icon/search.svg" alt="Search Icon"
+              class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+          </div>
+        </div>
+      </header>
+
+      <!-- content 1: My Cards -->
+      <div class="flex-1 p-4 overflow-auto px-10">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">My Cards</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="rounded-2xl p-6 text-white flex flex-col justify-between h-56"
+            style="background: linear-gradient(107.38deg, #2D60FF 2.61%, #539BFF 101.2%);">
+            <div class="flex justify-between">
+              <div>
+                <p class="text-xs">Balance</p>
+                <p class="text-2xl font-semibold mt-1">$5,756</p>
+              </div>
+              <img src="img/Chip_Card (1).png" alt="Chip" class="w-6 h-6">
+            </div>
+            <div class="flex justify-between mt-6">
+              <div>
+                <p class="uppercase text-xs">Card Holder</p>
+                <p class="mt-1 font-semibold">Eddy Cusuma</p>
+              </div>
+              <div>
+                <p class="uppercase text-xs">Valid Thru</p>
+                <p class="mt-1 font-semibold">12/22</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mt-4 bg-white/20 rounded-lg px-4 py-2">
+              <p class="tracking-widest text-lg font-mono">3778 **** **** 1234</p>
+              <div class="flex space-x-2">
+                <div class="w-3 h-3 bg-white bg-opacity-50 rounded-full"></div>
+                <div class="w-3 h-3 bg-white bg-opacity-50 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="rounded-2xl p-6 text-white flex flex-col justify-between h-56"
+            style="background: linear-gradient(107.38deg, #4C49ED 2.61%, #0A06F4 101.2%);">
+            <div class="flex justify-between">
+              <div>
+                <p class="text-xs">Balance</p>
+                <p class="text-2xl font-semibold mt-1">$5,756</p>
+              </div>
+              <img src="img/Chip_Card (1).png" alt="Chip" class="w-6 h-6">
+            </div>
+            <div class="flex justify-between mt-6">
+              <div>
+                <p class="uppercase text-xs">Card Holder</p>
+                <p class="mt-1 font-semibold">Eddy Cusuma</p>
+              </div>
+              <div>
+                <p class="uppercase text-xs">Valid Thru</p>
+                <p class="mt-1 font-semibold">12/22</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mt-4 bg-white/20 rounded-lg px-4 py-2">
+              <p class="tracking-widest text-lg font-mono">3778 **** **** 1234</p>
+              <div class="flex space-x-2">
+                <div class="w-3 h-3 bg-white bg-opacity-50 rounded-full"></div>
+                <div class="w-3 h-3 bg-white bg-opacity-50 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="rounded-2xl p-6 text-black flex flex-col justify-between h-56" style="border: 1px solid #DFEAF2">
+            <div class="flex justify-between">
+              <div>
+                <p class="text-xs">Balance</p>
+                <p class="text-2xl font-semibold mt-1">$5,756</p>
+              </div>
+              <img src="img/Chip_Card (2).png" alt="Chip" class="w-6 h-6">
+            </div>
+            <div class="flex justify-between mt-6">
+              <div>
+                <p class="uppercase text-xs">Card Holder</p>
+                <p class="mt-1 font-semibold">Eddy Cusuma</p>
+              </div>
+              <div>
+                <p class="uppercase text-xs">Valid Thru</p>
+                <p class="mt-1 font-semibold">12/22</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mt-4 bg-white/20 rounded-lg px-4 py-2">
+              <p class="tracking-widest text-lg font-mono">3778 **** **** 1234</p>
+              <div class="flex space-x-2">
+                <div class="w-3 h-3 bg-gray-300 bg-opacity-50 rounded-full"></div>
+                <div class="w-3 h-3 bg-gray-300 bg-opacity-50 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- content 2 -->
+      <div class="flex-1 px-10">
+        <div class="mt-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card Expense -->
+            <div class="col-span-1 flex flex-col">
+              <h2 class="text-2xl font-bold mb-6 text-gray-800">Card Expense Statistics</h2>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center justify-center  justify-center flex-1 h-full">
+                <div id="expenseChart" class="w-32 h-32 flex items-center justify-center">
+                  <img src="img/icon/Group 346 (1).svg" alt="Chart Icon" class="w-full h-full object-contain">
+                </div>
+
+                <!-- Keterangan -->
+                <div class="grid grid-cols-2 gap-2 mt-4 text-[15px]" style="color:#718EBF;">
+                  <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full" style="background-color: #718EBF;"></span>
+                    <span>DBL Bank</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full" style="background-color: #FDBC64;"></span>
+                    <span>MCP Bank</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full" style="background-color: #FF7E86;"></span>
+                    <span>BRC Bank</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full" style="background-color: #3DD598;"></span>
+                    <span>ABM Bank</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card List-->
+            <div class="col-span-2 flex flex-col">
+              <h2 class="text-2xl font-bold mb-6 text-gray-800">Card List</h2>
+
+              <div class="flex flex-col gap-4">
+                <!-- Card Item 1 -->
+                <div class="bg-white p-4 shadow-md flex items-center rounded-2xl">
+                  <div class="p-3 mr-4 flex items-center justify-center bg-blue-100 rounded-xl">
+                    <img src="img/icon/credit-card 1 (1).svg" alt="icon" class="w-6 h-6">
+                  </div>
+                  <div class="flex items-center justify-between w-full">
+                    <!-- Left Info -->
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-700">Card Type</div>
+                      <div class="text-xs">Secondary</div>
+                    </div>
+                    <!-- Right Info -->
+                    <div class="hidden md:flex items-center justify-end gap-10 pr-10">
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Bank</div>
+                        <div class="text-xs">DBL Bank</div>
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Card Number</div>
+                        <div class="text-xs">**** **** 5600</div>
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Name in Card</div>
+                        <div class="text-xs">William</div>
+                      </div>
+                    </div>
+
+                    <!-- View Details -->
+                    <div class="ml-4">
+                      <a href="#" class="text-sm font-semibold text-blue-600 hover:underline">View Details</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Card item 2-->
+                <div class="bg-white p-4 shadow-md flex items-center rounded-2xl">
+                  <div class="p-3 mr-4 flex items-center justify-center bg-yellow-100 rounded-xl">
+                    <img src="img/icon/credit-card 3.svg" alt="icon" class="w-6 h-6">
+                  </div>
+                  <div class="flex items-center justify-between w-full">
+                    <!-- Left Info -->
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-700">Card Type</div>
+                      <div class="text-xs">Secondary</div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="hidden md:flex items-center justify-end gap-10 pr-10">
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Bank</div>
+                        <div class="text-xs">BRC Bank</div>
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Card Number</div>
+                        <div class="text-xs">**** **** 4300</div>
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Name in Card</div>
+                        <div class="text-xs">Michel</div>
+                      </div>
+                    </div>
+
+                    <!-- View Details -->
+                    <div class="ml-4">
+                      <a href="#" class="text-sm font-semibold text-blue-600 hover:underline">View Details</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Crad item 3 -->
+                <div class="bg-white p-4 shadow-md flex items-center rounded-2xl">
+                  <div class="p-3 mr-4 flex items-center justify-center bg-red-100 rounded-xl">
+                    <img src="img/icon/credit-card 1 (2).svg" alt="icon" class="w-6 h-6">
+                  </div>
+                  <div class="flex items-center justify-between w-full">
+                    <!-- Left Info -->
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-700">Card Type</div>
+                      <div class="text-xs">Secondary</div>
+                    </div>
+
+                    <!-- Right Info -->
+                    <div class="hidden md:flex items-center justify-end gap-10 pr-10">
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Bank</div>
+                        <div class="text-xs">DBL Bank</div>
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Card Number</div>
+                        <div class="text-xs">**** **** 5600</div>
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="text-sm font-semibold text-gray-700">Name in Card</div>
+                        <div class="text-xs">William</div>
+                      </div>
+                    </div>
+
+                    <!-- View Details -->
+                    <div class="ml-4">
+                      <a href="#" class="text-sm font-semibold text-blue-600 hover:underline">View Details</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- content 3 -->
+      <div class="flex-1 px-10">
+        <div class="mt-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Add Card -->
+            <div class="col-span-2 flex flex-col">
+              <h2 class="text-2xl font-bold mb-6 text-gray-800">Add New Card</h2>
+              <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col">
+                <p class="text-base text-[#718EBF]">Credit Card generally means a plastic card issued by Scheduled
+                  Commercial Banks assigned to a Cardholder, with a credit limit, that can be used to purchase goods and
+                  services on credit or obtain cash advances.</p>
+
+                <!-- Form add Card -->
+                <form class="flex flex-col gap-4 mt-4">
+                  <div class="flex flex-col md:flex-row gap-4">
+                    <!-- Card Type -->
+                    <div class="w-full">
+                      <label class="text-base text-[#232323]">Card Type</label>
+                      <select
+                        class="w-full mt-2 p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-[#718EBF] text-[15px]">
+                        <option value="">Classic</option>
+                        <option value="visa">Secondary</option>
+                      </select>
+                    </div>
+
+                    <!-- Name -->
+                    <div class="w-full">
+                      <label class="text-base text-[#232323]">Name on Card</label>
+                      <input type="text" value="John Doe"
+                        class="w-full mt-2 p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-[#718EBF] text-[15px]" />
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col md:flex-row gap-4">
+                    <!-- Card Number -->
+                    <div class="w-full">
+                      <label class="text-base text-[#232323]">Card Number</label>
+                      <input type="text" value="**** **** **** ****"
+                        class="w-full mt-2 p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-[#718EBF] text-[15px]" />
+                    </div>
+
+                    <!-- Expiration Date -->
+                    <div class="w-full">
+                      <label class="text-base text-[#232323]">Expiration Date</label>
+                      <input type="date"
+                        class="w-full mt-2 p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-[#718EBF] text-[15px]" />
+                    </div>
+                  </div>
+
+                  <!-- submit button -->
+                  <button type="submit" class="mt-4 bg-[#1814F3] text-white py-2 rounded-lg hover:bg-blue-600"
+                    style="width: 120px; height: 40px;">
+                    Add Card
+                  </button>
+                </form>
+
+              </div>
+            </div>
+
+            <!-- Card Settings -->
+            <div class="flex flex-col">
+              <h2 class="text-2xl font-bold mb-6 text-gray-800">Card Settings</h2>
+              <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col">
+
+                <!-- Block Card -->
+                <div class="flex items-center space-x-4 mb-4">
+                  <div class="bg-yellow-100 p-3 rounded-xl">
+                    <img src="img/icon/credit-card 3.svg" alt="">
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-800">Block Card</div>
+                    <div class="text-sm text-gray-500">Instantly block your card</div>
+                  </div>
+                </div>
+
+                <!-- Change Pic Code -->
+                <div class="flex items-center space-x-4 mb-4">
+                  <div class="bg-blue-100 p-3 rounded-xl">
+                    <img src="img/icon/002-padlock.svg" alt="">
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-800">Change Pic Code</div>
+                    <div class="text-sm text-gray-500">Withdraw without any card</div>
+                  </div>
+                </div>
+
+                <!-- Google -->
+                <div class="flex items-center space-x-4 mb-4">
+                  <div class="bg-red-100 p-3 rounded-xl">
+                    <img src="img/icon/003-google-glass-logo.svg" alt="">
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-800">Add to Google Play</div>
+                    <div class="text-sm text-gray-500">Withdraw without any card</div>
+                  </div>
+                </div>
+
+                <!-- IP -->
+                <div class="flex items-center space-x-4 mb-4">
+                  <div class="bg-green-100 p-3 rounded-xl">
+                    <img src="img/apple.png" alt="">
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-800">Add to Apple Pay</div>
+                    <div class="text-sm text-gray-500">Withdraw without any card</div>
+                  </div>
+                </div>
+
+                <!-- IP (duplicate) -->
+                <div class="flex items-center space-x-4 mb-4">
+                  <div class="bg-green-100 p-3 rounded-xl">
+                    <img src="img/apple.png" alt="">
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-800">Add to Apple Pay</div>
+                    <div class="text-sm text-gray-500">Withdraw without any card</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    const button = document.getElementById('menu-button');
+    const sidebar = document.getElementById('sidebar');
+
+    button.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+
+
+  </script>
+
+</body>
+
+</html>
